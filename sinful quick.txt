@@ -1,0 +1,7 @@
+Password: just hit enter
+
+UDP 34.86.231.244 443 3000 1000
+UDP 34.86.231.244 443 3000 1000
+
+stop
+clear
