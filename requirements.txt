@@ -1,0 +1,3 @@
+socks
+pysocks
+bs4
