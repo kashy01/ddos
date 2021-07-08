@@ -1,0 +1,5 @@
+yum install python3 perl -y
+export LANG="en_US.UTF-8"
+git clone https://github.com/kashy01/ddos
+cd ddos
+perl sinful.c
