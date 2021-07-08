@@ -1,5 +1,4 @@
 yum install python3 perl -y
+pip3 install socks pysocks bs4
 export LANG="en_US.UTF-8"
-git clone https://github.com/kashy01/ddos
 cd ddos
-perl sinful.c
