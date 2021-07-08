@@ -1,3 +1,0 @@
-socks
-pysocks
-bs4
