@@ -94,7 +94,7 @@ def main():
 	global dp
 
 	while True:
-		sys.stdout.write("")
+		sys.stdout.write(" ")
 		sin = input("cmd> ").lower()
 		sinput = sin.split(" ")[0]
 		if sinput == "clear":
