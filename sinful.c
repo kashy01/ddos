@@ -66,13 +66,11 @@ updatenotes = """\033[91m
 """
 
 banner = """
- .|'''.|   ||            .|':          '|| 
- ||..  '  ...  .. ...   .||.  ... ...   || 
-  ''|||.   ||   ||  ||   ||    ||  ||   || 
-.     '||  ||   ||  ||   ||    ||  ||   || 
-|'....|'  .||. .||. ||. .||.   '|..'|. .||.
 
-                  \033[1;91m罪 深 い\033[00m
+			        Angels go to heaven
+			   Demons meet the gates of hell
+		      Sinfull people are punished put in hell
+		      		   \033[1;91mS I N F U L L\033[00m
 """
 
 cookie = open(".Sinful_Cookie","w+")
@@ -181,8 +179,8 @@ def main():
 	global http
 
 	while True:
-		sys.stdout.write("\x1b]2;Sinful\x07")
-		sin = input("\033[1;00m[\033[91mSinful\033[1;00m]-\033[91m家\033[00m ").lower()
+		sys.stdout.write("")
+		sin = input("cmd:  ").lower()
 		sinput = sin.split(" ")[0]
 		if sinput == "clear":
 			os.system ("clear")
@@ -355,4 +353,3 @@ try:
 			exit()
 except KeyboardInterrupt:
 	exit()
-    
