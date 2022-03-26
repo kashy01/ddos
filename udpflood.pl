@@ -8,7 +8,7 @@ use Socket;
 use strict;
 
 if ($#ARGV != 3) {
-  print "perl udpflood <ip> <port> <size> <time>\n\n";
+  print "perl udpflood.pl <ip> <port> <size> <time>\n\n";
   print "port=0: random ports\n";
   print "size=0: random size between 64 and 1024\n";
   print "time=0: continuous flood\n";
