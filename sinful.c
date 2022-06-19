@@ -47,6 +47,7 @@ banner = """
 		      Sinful people are punished put in hell
 """
 
+cookie = open(".Sinful_Cookie","w+")
 
 fsubs = 0
 tpings = 0
@@ -93,7 +94,7 @@ def main():
 	global dp
 
 	while True:
-		sys.stdout.write(" ")
+		sys.stdout.write("")
 		sin = input("cmd> ").lower()
 		sinput = sin.split(" ")[0]
 		if sinput == "clear":
@@ -221,6 +222,7 @@ try:
 		if password == passwords[0]:
 			print ("[+] Login Correct.")
 			print ("[+] Type Help To See Commands.")
+			cookie.write("DIE")
 			time.sleep(1)
 			os.system (clear)
 			try:
